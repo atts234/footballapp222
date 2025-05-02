@@ -33,7 +33,10 @@ Welcome to the **Football Player Performance Dashboard**, a Streamlit-based mult
 pip install -r requirements.txt
 
 
-**Launch the Dashboard:**
+2. Launch the Dashboard
+
+```bash
 streamlit run Dashboard/Main.py
+
 
 
