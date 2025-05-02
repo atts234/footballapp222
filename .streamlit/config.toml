@@ -1,0 +1,12 @@
+[theme]
+primaryColor = "#1f77b4"               # Blue tone for buttons and highlights
+backgroundColor = "#f0f2f6"            # Light gray background
+secondaryBackgroundColor = "#ffffff"  # White cards or containers
+textColor = "#262730"                 # Dark text
+font = "sans serif"                   # Font style
+
+[server]
+headless = true
+
+[client]
+showSidebarNavigation = false
