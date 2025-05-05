@@ -2,16 +2,20 @@ import streamlit as st
 import pages.compare as compare
 import pages.Single_Player as single
 import pages.Top_Ranked as ranked
+import pages.Team_stats as team
+import pages.Performance_Predictor as predict  # 🔥 New import
 
-# Set page layout config
+# Set page layout and title
 st.set_page_config(page_title="Player Performance Insights", layout="wide")
 
-# Sidebar navigation
+# Sidebar page selection
 page = st.sidebar.selectbox("Select View", [
     "Home", 
     "Compare Players", 
     "Single Player View", 
-    "Top 10 Forwards"
+    "Top 10 Forwards", 
+    "Team Stats",
+    "Performance Predictor"  # 🔥 New option
 ])
 
 # Home Page
@@ -19,29 +23,33 @@ if page == "Home":
     st.title("⚽ Football Player Performance Insights")
     st.markdown("""
         ## Welcome to the **Player Performance Dashboard**
-        This dashboard is designed to support coaches, analysts, and sports scientists by offering 
-        machine learning–driven insights into the performance of football forwards.
-
-        Explore anonymized data from any league and gain a better understanding of:
-        - Workload and playing time
-        - Missed chances and shot accuracy
-        - Projected performance levels
+        This dashboard helps coaches, analysts, and sports scientists:
+        
+        - Understand player workload and contributions
+        - Identify missed opportunities and trends
+        - View ML-predicted performance categories
 
         ---
-        **Use the sidebar to:**
-        - 🔍 View a single player's profile and performance category
-        - ⚔️ Compare two forwards side by side
-        - 📊 View top 10 ranked forwards
+        **Use the sidebar to explore:**
+        - 🔍 Individual player breakdowns
+        - ⚔️ Head-to-head forward comparisons
+        - 🏆 Top 10 ranked forwards
+        - 📊 Aggregated team-level stats
+        - 🔮 Predict new player performance
     """)
 
-# Compare View
 elif page == "Compare Players":
     compare.app()
 
-# Single Player View
 elif page == "Single Player View":
     single.app()
 
-# Top 10 Rankings
 elif page == "Top 10 Forwards":
     ranked.app()
+
+elif page == "Team Stats":
+    team.app()
+
+elif page == "Performance Predictor":
+    predict.app()  # 🔥 New route
+
